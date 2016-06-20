@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%
 String path = request.getContextPath();
+request.setAttribute("path", path);
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
@@ -17,8 +18,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/error.css">
-	<script type="text/javascript" src="/chatRoom/javascript/error.js"></script>
+	<link rel="stylesheet" type="text/css" href="${path}/css/error.css">
+	<script type="text/javascript" src="${path}/javascript/error.js"></script>
 
   </head>
   
@@ -32,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<td></td>
     	</tr>
     	<tr class="back">
-    		<td><a href="/chatRoom/index.jsp" class="backA">返回</a></td>
+    		<td><a href="${path}/index.jsp" class="backA">返回</a></td>
     		<td></td><td></td>
     	</tr>
     </table>

@@ -2,6 +2,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%
 String path = request.getContextPath();
+request.setAttribute("path", path);
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 int current_user =  ApplicationConstants.CURRENT_LOGIN_COUNT;
 request.setAttribute("current_user", current_user);
@@ -14,13 +15,13 @@ request.setAttribute("current_user", current_user);
     
     <title>启航聊天室</title>
     
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/chatRoom.css">
-	<script type="text/javascript" src="/chatRoom/javascript/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/xmlRequestPool.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/json2.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/ajaxfileupload.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/chat.js"></script>
+	<link rel="stylesheet" type="text/css" href="${path}/css/chatRoom.css">
+	<script type="text/javascript" src="${path}/javascript/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="${path}/javascript/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="${path}/javascript/xmlRequestPool.js"></script>
+	<script type="text/javascript" src="${path}/javascript/json2.js"></script>
+	<script type="text/javascript" src="${path}/javascript/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="${path}/javascript/chat.js"></script>
 
   </head>
   
@@ -101,7 +102,7 @@ request.setAttribute("current_user", current_user);
   	
   	<div id="backDiv">
     		<input type="button" id="backButton" value=" <= ">
-    	</div>
+    </div>
   	
   </body>
 </html>

@@ -2,6 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <%
 String path = request.getContextPath();
+request.setAttribute("path", path);
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
@@ -12,14 +13,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>资料设置</title>
 
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/setting.css">
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/setting2.css">
+	<link rel="stylesheet" type="text/css" href="${path}/css/setting.css">
+	<link rel="stylesheet" type="text/css" href="${path}/css/setting2.css">
 	
-	<script type="text/javascript" src="/chatRoom/javascript/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/xmlRequestPool.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/setting.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="${path}/javascript/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="${path}/javascript/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="${path}/javascript/xmlRequestPool.js"></script>
+	<script type="text/javascript" src="${path}/javascript/setting.js"></script>
+	<script type="text/javascript" src="${path}/javascript/ajaxfileupload.js"></script>
 
   </head>
   

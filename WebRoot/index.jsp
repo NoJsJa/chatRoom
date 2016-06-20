@@ -2,6 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <%
 String path = request.getContextPath();
+request.setAttribute("path", path);
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 request.setCharacterEncoding("utf-8");
 %>
@@ -10,21 +11,20 @@ request.setCharacterEncoding("utf-8");
 <html>
   <head>
     <base href="<%=basePath%>">
-    <meta name="baidu_union_verify" content="98d90441920dd32d28734fda3f18fb4f">
     
     <title>登录 启航聊天室</title>
 
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/index.css">
-	<script type="text/javascript" src="/chatRoom/javascript/jquery-2.1.4.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/xmlRequestPool.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="${path}/css/index.css">
+	<script type="text/javascript" src="${path}/javascript/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="${path}/javascript/xmlRequestPool.js"></script>
+	<script type="text/javascript" src="${path}/javascript/index.js"></script>
   </head>
   
   <body onload="init()">
   
   <div class="webm">
-  	<video class="covervid-webm" autoplay loop poster="/chatRoom/img/rain.jpg">
-		<source src="/chatRoom/videos/rain.webm" type="video/webm">
+  	<video class="covervid-webm" autoplay loop poster="${path}/img/rain.jpg">
+		<source src="${path}/videos/rain.webm" type="video/webm">
 	</video>
 
   </div>

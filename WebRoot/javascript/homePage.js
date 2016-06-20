@@ -22,6 +22,9 @@ $(function() {
     $("#closeSession").click(function () {
         hiddenSession(null);
     });
+    $('#video').click(function () {
+        videoRequest();
+    });
 	getHeadImg();
 	//Enter键发送
 	document.onkeydown = function(event){
@@ -76,6 +79,17 @@ $(function() {
 	//即时会话会话
 	continueAjaxRequest();
 });
+
+//发送视频聊天的请求并进入视频聊天室
+function videoRequest(){
+	
+	var name_sendTo = $('#titleDetails').text();
+    var name_sender = $('#name').text();
+
+    $('#messageInput').val('--- 系统: 请求视频通话 --- ');
+    sendSingleMessage();
+    window.location.href = "/chatRoom/video.jsp?sender=" + name_sender + "&sendTo=" + name_sendTo;
+}
 
 //得到背景头像
 function getHeadImg(){
@@ -272,6 +286,8 @@ function startSession(name) {
 	hiddenSession(name);
 	//显示会话页面
 	showSession();
+	//视频通话按钮启用
+	$('#video').attr('disabled',false);
 	//更新朋友列表
 	var name_sendTo = document.getElementById("titleDetails");
 	name_sendTo.innerText = name;

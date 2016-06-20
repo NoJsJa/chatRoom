@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%
 String path = request.getContextPath();
+request.setAttribute("path", path);
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
@@ -17,17 +18,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/directAccessError.css">
+	<link rel="stylesheet" type="text/css" href="${path}/css/directAccessError.css">
 
   </head>
   
   <body>
     <div id="imgDiv">
-    	<img id="errorImg" src="/chatRoom/img/forbid.jpg">
+    	<img id="errorImg" src="${path}/img/forbid.jpg">
     </div>
     
     <div id="backDiv">
-    	<a id="backA" href="/chatRoom/index.jsp">Go登录页</a>
+    	<a id="backA" href="${path}/index.jsp">Go登录页</a>
     </div>
   </body>
 </html>

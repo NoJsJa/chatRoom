@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%
 String path = request.getContextPath();
+request.setAttribute("path", path);
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
@@ -11,11 +12,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>home page</title>
 	
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/homePage.css">
-	<link rel="stylesheet" type="text/css" href="/chatRoom/css/homePage2.css">
-	<script type="text/javascript" src="/chatRoom/javascript/jquery-2.1.4.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/xmlRequestPool.js"></script>
-	<script type="text/javascript" src="/chatRoom/javascript/homePage.js"></script>
+	<link rel="stylesheet" type="text/css" href="${path}/css/homePage.css">
+	<link rel="stylesheet" type="text/css" href="${path}/css/homePage2.css">
+	<script type="text/javascript" src="${path}/javascript/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="${path}/javascript/xmlRequestPool.js"></script>
+	<script type="text/javascript" src="${path}/javascript/homePage.js"></script>
 
   </head>
   
@@ -51,6 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<div id="info">
     			<div id="sendtoImgInfo"></div>
     			<div id="otherInfo">
+    				<div id="videoDiv"><input type="button" value="◎ 视频通话" id="video" disabled="disable"></div>
     				<div id="nameDiv">----好友资料----</div>
     				<div id="sexDiv">【性别】</div>
     				<div id="mottoDiv">【座右铭】</div>

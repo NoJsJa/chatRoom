@@ -81,10 +81,25 @@
 
 #mottoDiv {
 	width: 100%;
-	height: 40%;
+	height: 20%;
 	border: solid 1px white;
-	line-height: 80px;
+	line-height: 40px;
 	background-color: #528787;
+    overflow-y: scroll;
+}
+
+#videoDiv{
+	width: 100%;
+	height: 20%;
+	border: solid 1px white;
+	line-height: 40px;
+	background-color: #528787;
+}
+
+#video{
+	line-height: 40px;
+    color: #9a3226;
+    width: 100%;
 }
 
 #emojiDiv {
